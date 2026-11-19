@@ -299,7 +299,7 @@ button:hover { border-color: var(--accent-pink); }
 
 .stage-trophy {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px 8px;
   align-items: center;
   width: 100%;
@@ -327,7 +327,13 @@ button:hover { border-color: var(--accent-pink); }
 
 .stage-trophy-mark { color: var(--accent-teal); font-weight: 700; flex: 0 0 auto; }
 
-.stage-trophy-name { font-weight: 600; flex: 1 1 auto; }
+.stage-trophy-name { font-weight: 600; flex: 1 1 auto; min-width: 0; }
+
+/* Badges and count chips never shrink or wrap: the name takes the squeeze
+   (its text wraps inside the name span) so a long name like
+   "You Gotta Know When to Get Off" keeps its grade badge on the same line. */
+.stage-trophy .badge,
+.stage-trophy-count { flex: 0 0 auto; }
 
 .stage-trophy-count {
   font-size: 0.8rem;

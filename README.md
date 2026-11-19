@@ -25,6 +25,21 @@ and says plainly where the exact details are not public yet.
 - Export and import your progress as JSON
 - Zero network requests at runtime; no trackers, no CDN, no fonts
 
+## Screenshots
+
+Rendered from this app in headless Chrome at 1280×800 (see
+[shots.json](shots.json)):
+
+1. `1-checklist-detail.jpg` — the checklist with trophy #48
+   *Actions Speak Louder* open in the detail panel beside it: the missable
+   badge, the guide, and its sources.
+2. `2-roadmap.jpg` — the roadmap to the platinum, five stages with
+   per-stage progress.
+3. `3-spoiler.jpg` — spoiler mode on: story trophy guides hidden behind
+   Reveal buttons.
+4. `4-filters.jpg` — the kind filter set to Collectibles with three
+   trophies marked earned, showing the progress bar and the per-kind stats.
+
 ## How to run it
 
 Serve the `app/` folder with any static server, for example:
