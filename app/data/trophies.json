@@ -3,7 +3,7 @@
   "platform": "PlayStation 5",
   "list": "the official 55 trophies, 2026-11-18",
   "about": "Leonida Trophy Guide data. Names, descriptions and grades are the official PlayStation list as published by Exophase and PSNProfiles. Every guide is written fresh for this entry, in its own words, and names its sources. The game is not released yet: where a detail is not public, the guide says so instead of inventing it.",
-  "hiddenNote": "The kit starter does not publish which trophies are hidden on PlayStation, so the hidden flags here are this guide's estimate: story trophies and trophies whose official description is deliberately vague are marked hidden. They will be checked against the live listings after release.",
+  "hiddenNote": "The kit starter does not publish which trophies are hidden on PlayStation, so the hidden flags here are this guide's estimate: story trophies and trophies whose official description is deliberately vague are marked hidden, 26 of 55. The official list reports 28 hidden; the gap is left as it is rather than forcing flags to match, because the remaining descriptions all state their objective plainly. The flags will be checked against the live listings after release.",
   "roadmap": [
     {
       "stage": 1,
@@ -609,7 +609,7 @@
       "name": "Let’s Go Bowling",
       "description": "Follow-through at the Kolt & Associates' bowling alley.",
       "grade": "bronze",
-      "hidden": false,
+      "hidden": true,
       "guide": "Follow-through at the Kolt & Associates' bowling alley. Visit that bowling alley and bowl; the name points to a story-flavoured moment, and the exact requirement is not public yet. Bronze on Exophase and PSNProfiles.",
       "sources": ["Exophase", "PSNProfiles"],
       "kind": "activities",

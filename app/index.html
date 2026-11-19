@@ -16,22 +16,82 @@
     <section class="progress" aria-label="Overall progress">
       <div class="progress-numbers">
         <strong id="progress-count">0 / 55 earned</strong>
-        <span id="progress-grades"></span>
       </div>
       <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
+      <div class="grade-stats" id="grade-stats" aria-label="Progress by grade"></div>
     </section>
   </div>
 </header>
 <main class="wrap">
-  <p class="status" id="status-note" role="status">Loading the trophy list&hellip;</p>
-  <ol class="trophy-list" id="trophy-list"></ol>
+  <nav class="view-switch" aria-label="Views">
+    <button type="button" id="view-checklist-btn" class="view-btn active" aria-pressed="true">Checklist</button>
+    <button type="button" id="view-roadmap-btn" class="view-btn" aria-pressed="false">Roadmap to the platinum</button>
+  </nav>
+
+  <section id="view-checklist" aria-label="Trophy checklist">
+    <div class="toolbar" role="search">
+      <label class="toolbar-field">
+        <span class="toolbar-label">Search</span>
+        <input type="search" id="filter-search" placeholder="Search names and guides…" autocomplete="off">
+      </label>
+      <label class="toolbar-field">
+        <span class="toolbar-label">Kind</span>
+        <select id="filter-kind">
+          <option value="">All kinds</option>
+          <option value="story">Story</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="combat">Combat</option>
+          <option value="exploration">Exploration</option>
+          <option value="economy">Economy</option>
+          <option value="misc">Free roam</option>
+          <option value="meta">Completion</option>
+        </select>
+      </label>
+      <label class="toolbar-field">
+        <span class="toolbar-label">Grade</span>
+        <select id="filter-grade">
+          <option value="">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="toolbar-check">
+        <input type="checkbox" id="filter-earned-only"> Earned only
+      </label>
+      <label class="toolbar-check">
+        <input type="checkbox" id="filter-missable-only"> Missable only
+      </label>
+      <label class="toolbar-check">
+        <input type="checkbox" id="spoiler-toggle"> Spoiler mode
+      </label>
+      <span class="toolbar-spacer"></span>
+      <button type="button" id="export-btn" class="toolbar-btn">Export progress</button>
+      <button type="button" id="import-btn" class="toolbar-btn">Import progress</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+    <p class="toolbar-hint">Click a trophy to open its guide beside the list. Spoiler mode hides story trophies until you earn them.</p>
+    <p class="status" id="status-note" role="status">Loading the trophy list&hellip;</p>
+    <ol class="trophy-list" id="trophy-list"></ol>
+  </section>
+
+  <section id="view-roadmap" aria-label="Roadmap to the platinum" hidden>
+    <p class="roadmap-intro">Five stages, in the order to play them. Each stage lists its trophies; click one to open its guide. Progress follows the same checklist as the tracker.</p>
+    <div class="roadmap" id="roadmap"></div>
+  </section>
 </main>
+<aside class="detail-panel" id="detail-panel" aria-label="Trophy details" hidden>
+  <div class="detail-inner" id="detail-content"></div>
+  <button type="button" class="detail-close" id="detail-close" aria-label="Close details">&times;</button>
+</aside>
 <footer class="wrap">
   <p>Names, descriptions and grades are the official PlayStation list, as published by Exophase and PSNProfiles. Every guide is written for this entry, in its own words, and names its sources.</p>
   <p>Grand Theft Auto VI is not released yet. Where a detail is not public, the guide says so instead of inventing it.</p>
-  <p>Progress is saved in this browser only, in localStorage. Nothing is sent anywhere; this page works with the network off.</p>
+  <p>Progress is saved in this browser only, in localStorage. Nothing is sent anywhere; this page works with the network off. Use Export progress to save a backup file, and Import progress to restore it.</p>
 </footer>
 <script type="module" src="app.js"></script>
 </body>
