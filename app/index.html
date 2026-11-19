@@ -4,115 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leonida Trophy Guide — GTA 6 Trophy Guide &amp; Tracker</title>
-<meta name="description" content="Offline guide and tracker for the 55 official GTA 6 trophies on PlayStation 5, with a roadmap to the platinum.">
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: official names, descriptions and grades, a guide for each, and a checklist saved in your browser.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <div>
-      <h1>Leonida Trophy Guide</h1>
-      <p class="subtitle">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; works fully offline</p>
-    </div>
-    <div class="progress-wrap" aria-live="polite">
-      <p class="progress-text"><span id="earned-count">0</span> of 55 earned</p>
-      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar">
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="tagline">All 55 trophies, a guide for each one, and a checklist that remembers your progress.</p>
+    <section class="progress" aria-label="Overall progress">
+      <div class="progress-numbers">
+        <strong id="progress-count">0 / 55 earned</strong>
+        <span id="progress-grades"></span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
-    </div>
+    </section>
   </div>
 </header>
-
-<main>
-  <section class="controls" aria-label="Trophy controls">
-    <label class="control search-control">
-      <span class="control-label">Search</span>
-      <input type="search" id="search" placeholder="Search trophies, descriptions, guides…" autocomplete="off">
-    </label>
-    <label class="control">
-      <span class="control-label">Kind</span>
-      <select id="kind-filter">
-        <option value="all">All kinds</option>
-        <option value="story">Story</option>
-        <option value="activities">Activities</option>
-        <option value="collectibles">Collectibles</option>
-      </select>
-    </label>
-    <label class="control">
-      <span class="control-label">Grade</span>
-      <select id="grade-filter">
-        <option value="all">All grades</option>
-        <option value="platinum">Platinum</option>
-        <option value="gold">Gold</option>
-        <option value="silver">Silver</option>
-        <option value="bronze">Bronze</option>
-      </select>
-    </label>
-    <label class="control check-control">
-      <input type="checkbox" id="spoiler-toggle">
-      <span>Hide guide spoilers</span>
-    </label>
-    <label class="control check-control">
-      <input type="checkbox" id="earned-only-toggle">
-      <span>Earned only</span>
-    </label>
-    <div class="control buttons-control">
-      <button type="button" id="export-btn">Export progress</button>
-      <button type="button" id="import-btn">Import progress</button>
-      <input type="file" id="import-file" accept=".json,application/json" hidden>
-    </div>
-  </section>
-
-  <section class="stats" id="stats" aria-label="Progress breakdown">
-    <div class="stats-group">
-      <h2 class="stats-heading">By grade</h2>
-      <dl class="stats-row" id="stats-grade"></dl>
-    </div>
-    <div class="stats-group">
-      <h2 class="stats-heading">By kind</h2>
-      <dl class="stats-row" id="stats-kind"></dl>
-    </div>
-  </section>
-
-  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
-    <h2>Roadmap to the platinum</h2>
-    <p class="roadmap-intro">Five stages, in order. Story first, then stranger strands, then
-    activities, then collectibles and clean-up — the platinum lands last.</p>
-    <ol class="roadmap-stages" id="roadmap-stages">
-      <!-- Filled in by app.js: one item per stage, with earned counts. -->
-    </ol>
-    <p class="roadmap-note"><strong>Missable:</strong> one trophy on this list —
-    <em>Actions Speak Louder</em> — turns on story choices. Keep a backup save
-    before any big decision. Everything else can be finished in free roam.</p>
-  </section>
-
-  <div class="content-layout">
-  <section class="trophy-section" aria-label="Trophy list">
-    <h2>All trophies <span class="result-count" id="result-count"></span></h2>
-    <p class="loading" id="loading">Loading the trophy list…</p>
-    <ul class="trophy-list" id="trophy-list"></ul>
-    <p class="empty-state" id="empty-state" hidden>No trophies match your filters.</p>
-  </section>
-
-  <aside class="detail-panel" id="detail-panel" aria-label="Trophy detail">
-    <!-- Filled in by app.js when a trophy is selected. -->
-    <div class="detail-empty">
-      <h2>Trophy detail</h2>
-      <p>Select any trophy — in the checklist below the roadmap, or in a
-      roadmap stage — to read its full guide here, beside the list.</p>
-    </div>
-  </aside>
-  </div>
+<main class="wrap">
+  <p class="status" id="status-note" role="status">Loading the trophy list&hellip;</p>
+  <ol class="trophy-list" id="trophy-list"></ol>
 </main>
-
-<footer class="site-footer">
-  <p>Guides are written in our own words from the official trophy descriptions
-  and the named trophy listings (Exophase, PSNProfiles). The game is not
-  released yet: where exact details are not public, the guide says so.
-  No Rockstar logo or artwork is used. Your earned trophies are stored
-  only in this browser.</p>
+<footer class="wrap">
+  <p>Names, descriptions and grades are the official PlayStation list, as published by Exophase and PSNProfiles. Every guide is written for this entry, in its own words, and names its sources.</p>
+  <p>Grand Theft Auto VI is not released yet. Where a detail is not public, the guide says so instead of inventing it.</p>
+  <p>Progress is saved in this browser only, in localStorage. Nothing is sent anywhere; this page works with the network off.</p>
 </footer>
-
 <script type="module" src="app.js"></script>
 </body>
 </html>
