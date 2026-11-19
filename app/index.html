@@ -63,6 +63,17 @@
     </div>
   </section>
 
+  <section class="stats" id="stats" aria-label="Progress breakdown">
+    <div class="stats-group">
+      <h2 class="stats-heading">By grade</h2>
+      <dl class="stats-row" id="stats-grade"></dl>
+    </div>
+    <div class="stats-group">
+      <h2 class="stats-heading">By kind</h2>
+      <dl class="stats-row" id="stats-kind"></dl>
+    </div>
+  </section>
+
   <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
     <h2>Roadmap to the platinum</h2>
     <p class="roadmap-intro">Five stages, in order. Story first, then stranger strands, then
@@ -75,12 +86,23 @@
     before any big decision. Everything else can be finished in free roam.</p>
   </section>
 
+  <div class="content-layout">
   <section class="trophy-section" aria-label="Trophy list">
     <h2>All trophies <span class="result-count" id="result-count"></span></h2>
     <p class="loading" id="loading">Loading the trophy list…</p>
     <ul class="trophy-list" id="trophy-list"></ul>
     <p class="empty-state" id="empty-state" hidden>No trophies match your filters.</p>
   </section>
+
+  <aside class="detail-panel" id="detail-panel" aria-label="Trophy detail">
+    <!-- Filled in by app.js when a trophy is selected. -->
+    <div class="detail-empty">
+      <h2>Trophy detail</h2>
+      <p>Select any trophy — in the checklist below the roadmap, or in a
+      roadmap stage — to read its full guide here, beside the list.</p>
+    </div>
+  </aside>
+  </div>
 </main>
 
 <footer class="site-footer">
