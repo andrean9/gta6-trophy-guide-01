@@ -387,6 +387,11 @@ footer p { margin: 14px 0 0; }
 
 /* ---------- Spoiler-masked cards ---------- */
 
+/* The hidden attribute must win over the card's grid display: without
+   this rule the author's display: grid beats the browser's [hidden]
+   rule and filtered-out cards stay visible. */
+.trophy[hidden] { display: none; }
+
 .trophy { cursor: pointer; }
 
 .trophy.spoiler-hidden .trophy-name { color: var(--faint); }
