@@ -8,6 +8,12 @@ PlayStation 5 trophies (1 platinum, 2 gold, 6 silver, 46 bronze),
 gives a guide for each in our own words, and tracks earned trophies
 in the browser. No Rockstar logo or artwork anywhere.
 
+This tree is the v2 recovery rebuild: every source file below was
+rewritten fresh, under a sealed recording, from the functional spec
+of the verified v1 build (commit 2baad19, kept in git history).
+The v1 files are the spec, never the source: nothing was copied
+in from them.
+
 ## Stack
 
 - Plain static files under `app/`: HTML, CSS, vanilla ES-module JS.
@@ -23,8 +29,7 @@ in the browser. No Rockstar logo or artwork anywhere.
 - `vendor/makefun-frontend.ts` — kit copy, UNCHANGED. Do not edit.
 - `app/index.html`, `app/style.css`, `app/app.js` — the app.
 - `app/data/trophies.json` — the 55 trophies + guides.
-- `screenshots/` — real renders of THIS app only (Phase 3).
-- `serve.ts` — optional local static server (dev convenience).
+- `screenshots/` — real renders of THIS app only, re-rendered in v2.
 
 ## How to run
 
@@ -50,8 +55,8 @@ in the browser. No Rockstar logo or artwork anywhere.
   the official description plus the named trophy listings. The game
   is not released: never invent a specific location or step without
   a source; say so where details are not public yet.
-- Never use the starter's screenshots; Phase 3 screenshots must be
-  real renders of this app.
+- Never use the starter's screenshots; screenshots must be real
+  renders of this app.
 - `vendor/makefun-frontend.ts` stays byte-identical to the kit copy.
 - `main.ts` uses the scorer's caps: text 163840 bytes, at most 4
   screenshots of at most 262144 bytes each, app at most 993 files
